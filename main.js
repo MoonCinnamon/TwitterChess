@@ -12,7 +12,6 @@ var db = new sqlite3.Database('accessToken.db');
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
-var mongo = require('mongodb').MongoClient;
 
 const path = require('path')
 const url = require('url')
@@ -38,6 +37,8 @@ var twitter = new OauthTwitter({
 
 function createWindow () {
   // Create the browser window.
+
+  console.log('start windows !')
   mainWindow = new BrowserWindow({width: 800, height: 600})
 
   // and load the index.html of the app.
@@ -47,6 +48,8 @@ function createWindow () {
     slashes: true
   })
   mainWindow.loadURL(mainUrl)
+
+
   db.run("create table if not exists token(_userId text ,_accessToken text, _accessTokenSecret text)");
   db.serialize(() => {
     db.serialize(() => {

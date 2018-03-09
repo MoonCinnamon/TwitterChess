@@ -4,16 +4,17 @@
     // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
     "version": "0.2.0",
     "configurations": [
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "프로그램 시작",
-            "cwd": "${workspaceRoot}",
-            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
-            "windows": {
-              "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
-            },
-            "args" : ["."]
-        }
+    
+      {
+        "name": "Debug Main Process",
+        "type": "node",
+        "request": "launch",
+        "cwd": "${workspaceRoot}",
+        "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
+        "windows": {
+          "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
+        },
+        "args" : ["."],
+      }
     ]
 }
